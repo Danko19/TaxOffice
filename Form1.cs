@@ -7,6 +7,7 @@ namespace TaxOffice
         public Form1()
         {
             InitializeComponent();
+            tabControl1.Controls.Clear();
         }
     }
 }
