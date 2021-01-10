@@ -55,7 +55,7 @@
             this.startPanel.Location = new System.Drawing.Point(262, 150);
             this.startPanel.Name = "startPanel";
             this.startPanel.Size = new System.Drawing.Size(276, 158);
-            this.startPanel.TabIndex = 0;
+            this.startPanel.TabIndex = 1;
             // 
             // startInput_password
             // 
@@ -64,7 +64,7 @@
             this.startInput_password.Margin = new System.Windows.Forms.Padding(6);
             this.startInput_password.Name = "startInput_password";
             this.startInput_password.Size = new System.Drawing.Size(276, 26);
-            this.startInput_password.TabIndex = 2;
+            this.startInput_password.TabIndex = 3;
             // 
             // startInput_name
             // 
@@ -73,7 +73,7 @@
             this.startInput_name.Margin = new System.Windows.Forms.Padding(6);
             this.startInput_name.Name = "startInput_name";
             this.startInput_name.Size = new System.Drawing.Size(276, 26);
-            this.startInput_name.TabIndex = 1;
+            this.startInput_name.TabIndex = 2;
             // 
             // registrationButton
             // 
@@ -81,7 +81,7 @@
             this.registrationButton.Location = new System.Drawing.Point(146, 110);
             this.registrationButton.Name = "registrationButton";
             this.registrationButton.Size = new System.Drawing.Size(130, 30);
-            this.registrationButton.TabIndex = 4;
+            this.registrationButton.TabIndex = 5;
             this.registrationButton.Text = "Регистрация";
             this.registrationButton.UseVisualStyleBackColor = true;
             this.registrationButton.Click += new System.EventHandler(this.registrationButton_Click);
@@ -92,7 +92,7 @@
             this.authorizationButton.Location = new System.Drawing.Point(0, 110);
             this.authorizationButton.Name = "authorizationButton";
             this.authorizationButton.Size = new System.Drawing.Size(130, 30);
-            this.authorizationButton.TabIndex = 3;
+            this.authorizationButton.TabIndex = 4;
             this.authorizationButton.Text = "Авторизация";
             this.authorizationButton.UseVisualStyleBackColor = true;
             this.authorizationButton.Click += new System.EventHandler(this.authorizationButton_Click);
