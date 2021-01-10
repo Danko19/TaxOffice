@@ -22,13 +22,13 @@ namespace TaxOffice
                 .SingleOrDefault();
             if (selectedUser == null)
             {
-                MessageBox.Show("Указанный пользователь не зарегистрирован в системе");
+                MessageBox.Show($"Пользователь {fullName} не зарегистрирован в системе");
                 return;
             }
 
             if (selectedUser.Password != password)
             {
-                MessageBox.Show("Введён неверный пароль");
+                MessageBox.Show($"Введён неверный пароль для пользователя {fullName}");
                 return;
             }
 
@@ -76,6 +76,7 @@ namespace TaxOffice
             }
 
             TaxOfficeDb.Insert(() => new User {FullName = fullName, Password = password});
+            MessageBox.Show($"Пользователь {fullName} зарегистрирован, дождитесь подтверждения администратора");
         }
     }
 }
