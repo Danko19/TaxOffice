@@ -45,7 +45,9 @@
             this.profilePage_nameLabel = new System.Windows.Forms.Label();
             this.profilePage_pictureBox = new System.Windows.Forms.PictureBox();
             this.ticketsPage = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ticketsPage_ticketsPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.ticketsPage_addButtonPanel = new System.Windows.Forms.Panel();
+            this.ticketsPage_addButton = new System.Windows.Forms.Button();
             this.registrationPage = new System.Windows.Forms.TabPage();
             this.historyPage = new System.Windows.Forms.TabPage();
             this.employeesPage = new System.Windows.Forms.TabPage();
@@ -54,6 +56,8 @@
             this.profilePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePage_pictureBox)).BeginInit();
             this.ticketsPage.SuspendLayout();
+            this.ticketsPage_ticketsPanel.SuspendLayout();
+            this.ticketsPage_addButtonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // startPanel
@@ -226,7 +230,8 @@
             // 
             // ticketsPage
             // 
-            this.ticketsPage.Controls.Add(this.panel1);
+            this.ticketsPage.AutoScroll = true;
+            this.ticketsPage.Controls.Add(this.ticketsPage_ticketsPanel);
             this.ticketsPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ticketsPage.Location = new System.Drawing.Point(4, 27);
             this.ticketsPage.Name = "ticketsPage";
@@ -236,13 +241,37 @@
             this.ticketsPage.Text = "Тикеты";
             this.ticketsPage.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // ticketsPage_ticketsPanel
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(740, 108);
-            this.panel1.TabIndex = 0;
+            this.ticketsPage_ticketsPanel.AutoSize = true;
+            this.ticketsPage_ticketsPanel.ColumnCount = 1;
+            this.ticketsPage_ticketsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ticketsPage_ticketsPanel.Controls.Add(this.ticketsPage_addButtonPanel, 0, 0);
+            this.ticketsPage_ticketsPanel.Location = new System.Drawing.Point(7, 7);
+            this.ticketsPage_ticketsPanel.Name = "ticketsPage_ticketsPanel";
+            this.ticketsPage_ticketsPanel.RowCount = 1;
+            this.ticketsPage_ticketsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ticketsPage_ticketsPanel.Size = new System.Drawing.Size(720, 36);
+            this.ticketsPage_ticketsPanel.TabIndex = 0;
+            // 
+            // ticketsPage_addButtonPanel
+            // 
+            this.ticketsPage_addButtonPanel.Controls.Add(this.ticketsPage_addButton);
+            this.ticketsPage_addButtonPanel.Location = new System.Drawing.Point(3, 3);
+            this.ticketsPage_addButtonPanel.Name = "ticketsPage_addButtonPanel";
+            this.ticketsPage_addButtonPanel.Size = new System.Drawing.Size(714, 30);
+            this.ticketsPage_addButtonPanel.TabIndex = 0;
+            // 
+            // ticketsPage_addButton
+            // 
+            this.ticketsPage_addButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ticketsPage_addButton.Location = new System.Drawing.Point(0, 0);
+            this.ticketsPage_addButton.Name = "ticketsPage_addButton";
+            this.ticketsPage_addButton.Size = new System.Drawing.Size(714, 30);
+            this.ticketsPage_addButton.TabIndex = 0;
+            this.ticketsPage_addButton.Text = "Добавить";
+            this.ticketsPage_addButton.UseVisualStyleBackColor = true;
+            this.ticketsPage_addButton.Click += new System.EventHandler(this.ticketsPage_addButton_Click);
             // 
             // registrationPage
             // 
@@ -292,6 +321,9 @@
             this.profilePage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePage_pictureBox)).EndInit();
             this.ticketsPage.ResumeLayout(false);
+            this.ticketsPage.PerformLayout();
+            this.ticketsPage_ticketsPanel.ResumeLayout(false);
+            this.ticketsPage_addButtonPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -309,7 +341,6 @@
         private System.Windows.Forms.TabPage registrationPage;
         private System.Windows.Forms.TabPage historyPage;
         private System.Windows.Forms.TabPage employeesPage;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox profilePage_pictureBox;
         private System.Windows.Forms.Label profilePage_nameLabel;
         private System.Windows.Forms.TextBox profilePage_passwordTextBox;
@@ -318,5 +349,8 @@
         private System.Windows.Forms.Label profilePage_passwordLabel;
         private System.Windows.Forms.Button profilePage_emailChangeButton;
         private System.Windows.Forms.Button profilePage_passwordChangeButton;
+        private System.Windows.Forms.TableLayoutPanel ticketsPage_ticketsPanel;
+        private System.Windows.Forms.Panel ticketsPage_addButtonPanel;
+        private System.Windows.Forms.Button ticketsPage_addButton;
     }
 }

@@ -54,6 +54,7 @@ namespace TaxOffice
             startPanel.Enabled = false;
             tabControl1.Enabled = true;
             tabControl1.Visible = true;
+            await LoadTicketPageAsync();
         }
 
         private void registrationButton_Click(object sender, EventArgs e)
