@@ -37,10 +37,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.profilePage = new System.Windows.Forms.TabPage();
             this.ticketsPage = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.registrationPage = new System.Windows.Forms.TabPage();
             this.historyPage = new System.Windows.Forms.TabPage();
             this.employeesPage = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.startPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.ticketsPage.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             // startInput_password
             // 
-            this.startInput_password.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.startInput_password.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.startInput_password.Location = new System.Drawing.Point(0, 75);
             this.startInput_password.Margin = new System.Windows.Forms.Padding(6);
             this.startInput_password.Name = "startInput_password";
@@ -68,7 +68,7 @@
             // 
             // startInput_name
             // 
-            this.startInput_name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.startInput_name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.startInput_name.Location = new System.Drawing.Point(0, 37);
             this.startInput_name.Margin = new System.Windows.Forms.Padding(6);
             this.startInput_name.Name = "startInput_name";
@@ -77,22 +77,22 @@
             // 
             // registrationButton
             // 
-            this.registrationButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.registrationButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.registrationButton.Location = new System.Drawing.Point(146, 110);
             this.registrationButton.Name = "registrationButton";
             this.registrationButton.Size = new System.Drawing.Size(130, 30);
-            this.registrationButton.TabIndex = 1;
+            this.registrationButton.TabIndex = 4;
             this.registrationButton.Text = "Регистрация";
             this.registrationButton.UseVisualStyleBackColor = true;
             this.registrationButton.Click += new System.EventHandler(this.registrationButton_Click);
             // 
             // authorizationButton
             // 
-            this.authorizationButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.authorizationButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.authorizationButton.Location = new System.Drawing.Point(0, 110);
             this.authorizationButton.Name = "authorizationButton";
             this.authorizationButton.Size = new System.Drawing.Size(130, 30);
-            this.authorizationButton.TabIndex = 0;
+            this.authorizationButton.TabIndex = 3;
             this.authorizationButton.Text = "Авторизация";
             this.authorizationButton.UseVisualStyleBackColor = true;
             this.authorizationButton.Click += new System.EventHandler(this.authorizationButton_Click);
@@ -104,7 +104,7 @@
             this.tabControl1.Controls.Add(this.registrationPage);
             this.tabControl1.Controls.Add(this.historyPage);
             this.tabControl1.Controls.Add(this.employeesPage);
-            this.tabControl1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabControl1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
@@ -128,7 +128,7 @@
             // ticketsPage
             // 
             this.ticketsPage.Controls.Add(this.panel1);
-            this.ticketsPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ticketsPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.ticketsPage.Location = new System.Drawing.Point(4, 27);
             this.ticketsPage.Name = "ticketsPage";
             this.ticketsPage.Padding = new System.Windows.Forms.Padding(3);
@@ -136,6 +136,14 @@
             this.ticketsPage.TabIndex = 1;
             this.ticketsPage.Text = "Тикеты";
             this.ticketsPage.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(6, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(740, 108);
+            this.panel1.TabIndex = 0;
             // 
             // registrationPage
             // 
@@ -164,14 +172,6 @@
             this.employeesPage.Text = "Сотрудники";
             this.employeesPage.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(740, 108);
-            this.panel1.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,13 +184,13 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.startPanel.ResumeLayout(false);
             this.startPanel.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.ticketsPage.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
