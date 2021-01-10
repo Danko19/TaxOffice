@@ -30,8 +30,8 @@
         private void InitializeComponent()
         {
             this.startPanel = new System.Windows.Forms.Panel();
-            this.startInput_name = new System.Windows.Forms.TextBox();
             this.startInput_password = new System.Windows.Forms.TextBox();
+            this.startInput_name = new System.Windows.Forms.TextBox();
             this.registrationButton = new System.Windows.Forms.Button();
             this.authorizationButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -40,8 +40,10 @@
             this.registrationPage = new System.Windows.Forms.TabPage();
             this.historyPage = new System.Windows.Forms.TabPage();
             this.employeesPage = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.startPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.ticketsPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // startPanel
@@ -55,15 +57,6 @@
             this.startPanel.Size = new System.Drawing.Size(276, 158);
             this.startPanel.TabIndex = 0;
             // 
-            // startInput_name
-            // 
-            this.startInput_name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.startInput_name.Location = new System.Drawing.Point(0, 37);
-            this.startInput_name.Margin = new System.Windows.Forms.Padding(6);
-            this.startInput_name.Name = "startInput_name";
-            this.startInput_name.Size = new System.Drawing.Size(276, 26);
-            this.startInput_name.TabIndex = 1;
-            // 
             // startInput_password
             // 
             this.startInput_password.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -72,6 +65,15 @@
             this.startInput_password.Name = "startInput_password";
             this.startInput_password.Size = new System.Drawing.Size(276, 26);
             this.startInput_password.TabIndex = 2;
+            // 
+            // startInput_name
+            // 
+            this.startInput_name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.startInput_name.Location = new System.Drawing.Point(0, 37);
+            this.startInput_name.Margin = new System.Windows.Forms.Padding(6);
+            this.startInput_name.Name = "startInput_name";
+            this.startInput_name.Size = new System.Drawing.Size(276, 26);
+            this.startInput_name.TabIndex = 1;
             // 
             // registrationButton
             // 
@@ -125,6 +127,7 @@
             // 
             // ticketsPage
             // 
+            this.ticketsPage.Controls.Add(this.panel1);
             this.ticketsPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ticketsPage.Location = new System.Drawing.Point(4, 27);
             this.ticketsPage.Name = "ticketsPage";
@@ -161,13 +164,22 @@
             this.employeesPage.Text = "Сотрудники";
             this.employeesPage.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(6, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(740, 108);
+            this.panel1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.startPanel);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.startPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -176,6 +188,7 @@
             this.startPanel.ResumeLayout(false);
             this.startPanel.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.ticketsPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -193,5 +206,6 @@
         private System.Windows.Forms.TabPage registrationPage;
         private System.Windows.Forms.TabPage historyPage;
         private System.Windows.Forms.TabPage employeesPage;
+        private System.Windows.Forms.Panel panel1;
     }
 }
