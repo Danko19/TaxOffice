@@ -27,6 +27,7 @@ namespace TaxOffice
             ticketsPage_ticketsPanel.RowCount++;
             ticketsPage_ticketsPanel.RowStyles.Insert(ticketsPage_ticketsPanel.RowCount - 2,
                 new RowStyle(SizeType.AutoSize));
+            ticketsPage_ticketsPanel.SetRow(ticketsPage_addButtonPanel, ticketsPage_ticketsPanel.RowCount - 1);
             ticketsPage_ticketsPanel.Controls.Add(panel, 0, ticketsPage_ticketsPanel.RowCount - 2);
         }
 
@@ -46,7 +47,7 @@ namespace TaxOffice
                 AutoSize = true,
                 Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular,
                     System.Drawing.GraphicsUnit.Point, 204),
-                Location = new System.Drawing.Point(289, 30),
+                Location = new System.Drawing.Point(314, 30),
                 Size = new System.Drawing.Size(35, 14),
                 Text = "E-mail"
             };
@@ -55,7 +56,7 @@ namespace TaxOffice
                 AutoSize = true,
                 Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular,
                     System.Drawing.GraphicsUnit.Point, 204),
-                Location = new System.Drawing.Point(474, 30),
+                Location = new System.Drawing.Point(509, 30),
                 Size = new System.Drawing.Size(39, 14),
                 Text = "Адрес"
             };
@@ -78,14 +79,14 @@ namespace TaxOffice
             var emailTextBox = new TextBox
             {
                 Location = new System.Drawing.Point(256, 3),
-                Size = new System.Drawing.Size(100, 26),
+                Size = new System.Drawing.Size(150, 26),
                 TabIndex = 2,
                 Text = ticket?.Email
             };
             var addressTextBox = new TextBox
             {
-                Location = new System.Drawing.Point(359, 3),
-                Size = new System.Drawing.Size(270, 26),
+                Location = new System.Drawing.Point(409, 3),
+                Size = new System.Drawing.Size(220, 26),
                 TabIndex = 3,
                 Text = ticket?.Address
             };
@@ -161,7 +162,14 @@ namespace TaxOffice
                         Address = addressTextBox.Text,
                         Indebtedness = decimal.Parse(indebtednessTextBox.Text)
                     };
-                    TaxOfficeDb.Insert(() => ticket);
+                    TaxOfficeDb.Insert(() => new Ticket
+                    {
+                        Id = ticket.Id,
+                        FullName = ticket.FullName,
+                        Email = ticket.Email,
+                        Address = ticket.Address,
+                        Indebtedness = ticket.Indebtedness
+                    });
                     editButton.Text = "Изменить";
                 }
                 else
@@ -174,7 +182,8 @@ namespace TaxOffice
                     TaxOfficeDb.Delete<Ticket>(t => t.Id == ticket.Id);
                 var rowIndex = ticketsPage_ticketsPanel.GetRow(panel);
                 ticketsPage_ticketsPanel.RowStyles.RemoveAt(rowIndex);
-                
+                ticketsPage_ticketsPanel.Controls.Remove(panel);
+                ticketsPage_ticketsPanel.RowCount--;
             };
 
             panel.SuspendLayout();

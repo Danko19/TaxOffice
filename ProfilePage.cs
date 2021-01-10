@@ -11,7 +11,7 @@ namespace TaxOffice
     {
         private void LoadProfilePage()
         {
-            profilePage_pictureBox.BackgroundImage = user.Picture ?? profilePage_pictureBox.Image;
+            profilePage_pictureBox.BackgroundImage = user.Picture ?? profilePage_pictureBox.BackgroundImage;
             profilePage_nameLabel.Text = user.FullName;
             profilePage_emailTextBox.Text = user.Email;
             profilePage_passwordTextBox.Text = user.Password;
