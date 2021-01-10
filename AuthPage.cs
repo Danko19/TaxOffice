@@ -8,7 +8,7 @@ namespace TaxOffice
 {
     public partial class Form1
     {
-        private void authorizationButton_Click(object sender, EventArgs e)
+        private async void authorizationButton_Click(object sender, EventArgs e)
         {
             var fullName = startInput_name.Text;
             var password = startInput_password.Text;
@@ -49,6 +49,7 @@ namespace TaxOffice
             }
 
             user = selectedUser;
+            LoadProfilePage();
             startPanel.Visible = false;
             startPanel.Enabled = false;
             tabControl1.Enabled = true;

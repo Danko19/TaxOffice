@@ -1,4 +1,6 @@
-﻿using BLToolkit.DataAccess;
+﻿using System.Drawing;
+using System.IO;
+using BLToolkit.DataAccess;
 using BLToolkit.Mapping;
 
 namespace TaxOffice.Database.Models
@@ -21,6 +23,22 @@ namespace TaxOffice.Database.Models
         
         [MapField("role")]
         public Role Role { get; set; }
+        
+        [MapField("picture")]
+        public byte[] PictureRaw { get; set; }
+        
+        public Image Picture
+        {
+            get
+            {
+                if (PictureRaw == null)
+                    return null;
+                using (var stream = new MemoryStream(PictureRaw))
+                {
+                    return Image.FromStream(stream);
+                }
+            }
+        }
     }
 
     public enum Role
