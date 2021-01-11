@@ -11,18 +11,18 @@ namespace TaxOffice
     {
         private async Task LoadTicketPageAsync()
         {
-            var panels = await Task.Run(() => TaxOfficeDb.Select<Ticket>(t => true).Select(CreatePanel).ToArray());
+            var panels = await Task.Run(() => TaxOfficeDb.Select<Ticket>(t => true).Select(CreateTicketPanel).ToArray());
             foreach (var panel in panels)
-                AddPanel(panel);
+                AddTicketPanel(panel);
         }
 
         private void ticketsPage_addButton_Click(object sender, EventArgs e)
         {
-            var panel = CreatePanel(null);
-            AddPanel(panel);
+            var panel = CreateTicketPanel(null);
+            AddTicketPanel(panel);
         }
 
-        private void AddPanel(Panel panel)
+        private void AddTicketPanel(Panel panel)
         {
             ticketsPage_ticketsPanel.RowCount++;
             ticketsPage_ticketsPanel.RowStyles.Insert(ticketsPage_ticketsPanel.RowCount - 2,
@@ -31,7 +31,7 @@ namespace TaxOffice
             ticketsPage_ticketsPanel.Controls.Add(panel, 0, ticketsPage_ticketsPanel.RowCount - 2);
         }
 
-        private Panel CreatePanel(Ticket ticket)
+        private Panel CreateTicketPanel(Ticket ticket)
         {
             var fullNameLabel = new Label
             {
@@ -116,6 +116,7 @@ namespace TaxOffice
             };
 
             var panel = new Panel {BorderStyle = BorderStyle.FixedSingle};
+            panel.SuspendLayout();
             panel.Controls.Add(fullNameTextBox);
             panel.Controls.Add(emailTextBox);
             panel.Controls.Add(addressTextBox);
@@ -186,7 +187,6 @@ namespace TaxOffice
                 ticketsPage_ticketsPanel.RowCount--;
             };
 
-            panel.SuspendLayout();
             panel.ResumeLayout(false);
             panel.PerformLayout();
             return panel;

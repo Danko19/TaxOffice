@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaxOffice.Database;
 using TaxOffice.Database.Models;
@@ -32,7 +33,7 @@ namespace TaxOffice
                 return;
             }
 
-            if (selectedUser.Role != Role.Employee && selectedUser.Role != Role.Admin)
+            if (selectedUser.Role == Role.None)
             {
                 MessageBox.Show($"Учётная запись пользователя {fullName} ожидает подтверждения администратора");
                 return;
@@ -54,7 +55,10 @@ namespace TaxOffice
             startPanel.Enabled = false;
             tabControl1.Enabled = true;
             tabControl1.Visible = true;
-            await LoadTicketPageAsync();
+            await Task.WhenAll(
+                LoadTicketPageAsync(),
+                LoadRegistrationPageAsync()
+            );
         }
 
         private void registrationButton_Click(object sender, EventArgs e)

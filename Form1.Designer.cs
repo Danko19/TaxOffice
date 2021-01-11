@@ -51,6 +51,7 @@
             this.registrationPage = new System.Windows.Forms.TabPage();
             this.historyPage = new System.Windows.Forms.TabPage();
             this.employeesPage = new System.Windows.Forms.TabPage();
+            this.registrationPage_registrationsPanel = new System.Windows.Forms.TableLayoutPanel();
             this.startPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.profilePage.SuspendLayout();
@@ -58,6 +59,7 @@
             this.ticketsPage.SuspendLayout();
             this.ticketsPage_ticketsPanel.SuspendLayout();
             this.ticketsPage_addButtonPanel.SuspendLayout();
+            this.registrationPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // startPanel
@@ -275,8 +277,11 @@
             // 
             // registrationPage
             // 
+            this.registrationPage.AutoScroll = true;
+            this.registrationPage.Controls.Add(this.registrationPage_registrationsPanel);
             this.registrationPage.Location = new System.Drawing.Point(4, 27);
             this.registrationPage.Name = "registrationPage";
+            this.registrationPage.Padding = new System.Windows.Forms.Padding(3);
             this.registrationPage.Size = new System.Drawing.Size(752, 506);
             this.registrationPage.TabIndex = 2;
             this.registrationPage.Text = "Заявки на регистрацию";
@@ -299,6 +304,18 @@
             this.employeesPage.TabIndex = 4;
             this.employeesPage.Text = "Сотрудники";
             this.employeesPage.UseVisualStyleBackColor = true;
+            // 
+            // registrationPage_registrationsPanel
+            // 
+            this.registrationPage_registrationsPanel.AutoSize = true;
+            this.registrationPage_registrationsPanel.ColumnCount = 1;
+            this.registrationPage_registrationsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.registrationPage_registrationsPanel.Location = new System.Drawing.Point(7, 7);
+            this.registrationPage_registrationsPanel.Name = "ticketsPage_ticketsPanel";
+            this.registrationPage_registrationsPanel.RowCount = 1;
+            this.registrationPage_registrationsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.registrationPage_registrationsPanel.Size = new System.Drawing.Size(720, 1);
+            this.registrationPage_registrationsPanel.TabIndex = 0;
             // 
             // Form1
             // 
@@ -324,6 +341,7 @@
             this.ticketsPage.PerformLayout();
             this.ticketsPage_ticketsPanel.ResumeLayout(false);
             this.ticketsPage_addButtonPanel.ResumeLayout(false);
+            this.registrationPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -352,5 +370,6 @@
         private System.Windows.Forms.TableLayoutPanel ticketsPage_ticketsPanel;
         private System.Windows.Forms.Panel ticketsPage_addButtonPanel;
         private System.Windows.Forms.Button ticketsPage_addButton;
+        private System.Windows.Forms.TableLayoutPanel registrationPage_registrationsPanel;
     }
 }
