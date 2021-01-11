@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.IO;
 using BLToolkit.DataAccess;
 using BLToolkit.Mapping;
@@ -39,6 +40,8 @@ namespace TaxOffice.Database.Models
                 }
             }
         }
+
+        public override string ToString() => $"{FullName} ({Role.ToRussian()})";
     }
 
     public enum Role
@@ -46,5 +49,21 @@ namespace TaxOffice.Database.Models
         None = 0,
         Employee = 1,
         Admin = 2
+    }
+    
+    public static class RoleExtensions
+    {
+        public static string ToRussian(this Role role)
+        {
+            if (role == Role.Admin)
+                return "Администратор";
+            if (role == Role.Employee)
+                return "Подтвержденный пользователь";
+            if (role == Role.None)
+                return "Неподтвержденный пользователь";
+
+            throw new ArgumentOutOfRangeException();
+        }
+    
     }
 }

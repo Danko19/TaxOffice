@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using TaxOffice.Database;
 using TaxOffice.Database.Models;
 
 namespace TaxOffice
@@ -15,6 +14,7 @@ namespace TaxOffice
             InitializeComponent();
             AddWaterMark(startInput_name, "ФИО", false);
             AddWaterMark(startInput_password, "Пароль", true);
+            AddWaterMark(employeesPage_searchTextBox, "Поиск", false);
             startPanel.Select();
         }
 

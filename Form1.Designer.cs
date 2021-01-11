@@ -53,6 +53,8 @@
             this.historyPage = new System.Windows.Forms.TabPage();
             this.historyPage_listBox = new System.Windows.Forms.ListBox();
             this.employeesPage = new System.Windows.Forms.TabPage();
+            this.employeesPage_searchTextBox = new System.Windows.Forms.TextBox();
+            this.employeesPage_listBox = new System.Windows.Forms.ListBox();
             this.startPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.profilePage.SuspendLayout();
@@ -62,6 +64,7 @@
             this.ticketsPage_addButtonPanel.SuspendLayout();
             this.registrationPage.SuspendLayout();
             this.historyPage.SuspendLayout();
+            this.employeesPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // startPanel
@@ -132,6 +135,7 @@
             this.tabControl1.TabIndex = 2;
             this.tabControl1.TabStop = false;
             this.tabControl1.Visible = false;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // profilePage
             // 
@@ -325,12 +329,34 @@
             // 
             // employeesPage
             // 
+            this.employeesPage.Controls.Add(this.employeesPage_searchTextBox);
+            this.employeesPage.Controls.Add(this.employeesPage_listBox);
             this.employeesPage.Location = new System.Drawing.Point(4, 27);
             this.employeesPage.Name = "employeesPage";
             this.employeesPage.Size = new System.Drawing.Size(752, 506);
             this.employeesPage.TabIndex = 4;
             this.employeesPage.Text = "Сотрудники";
             this.employeesPage.UseVisualStyleBackColor = true;
+            // 
+            // employeesPage_searchTextBox
+            // 
+            this.employeesPage_searchTextBox.Location = new System.Drawing.Point(10, 12);
+            this.employeesPage_searchTextBox.Name = "employeesPage_searchTextBox";
+            this.employeesPage_searchTextBox.Size = new System.Drawing.Size(366, 26);
+            this.employeesPage_searchTextBox.TabIndex = 2;
+            this.employeesPage_searchTextBox.TextChanged += new System.EventHandler(this.employeesPage_searchTextBox_TextChanged);
+            // 
+            // employeesPage_listBox
+            // 
+            this.employeesPage_listBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.employeesPage_listBox.FormattingEnabled = true;
+            this.employeesPage_listBox.HorizontalScrollbar = true;
+            this.employeesPage_listBox.ItemHeight = 18;
+            this.employeesPage_listBox.Location = new System.Drawing.Point(10, 45);
+            this.employeesPage_listBox.Margin = new System.Windows.Forms.Padding(10);
+            this.employeesPage_listBox.Name = "employeesPage_listBox";
+            this.employeesPage_listBox.Size = new System.Drawing.Size(732, 452);
+            this.employeesPage_listBox.TabIndex = 1;
             // 
             // Form1
             // 
@@ -345,7 +371,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Налоговая служба";
             this.startPanel.ResumeLayout(false);
             this.startPanel.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -359,6 +385,8 @@
             this.registrationPage.ResumeLayout(false);
             this.registrationPage.PerformLayout();
             this.historyPage.ResumeLayout(false);
+            this.employeesPage.ResumeLayout(false);
+            this.employeesPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -389,5 +417,7 @@
         private System.Windows.Forms.Button ticketsPage_addButton;
         private System.Windows.Forms.TableLayoutPanel registrationPage_registrationsPanel;
         private System.Windows.Forms.ListBox historyPage_listBox;
+        private System.Windows.Forms.TextBox employeesPage_searchTextBox;
+        private System.Windows.Forms.ListBox employeesPage_listBox;
     }
 }

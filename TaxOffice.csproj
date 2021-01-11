@@ -66,6 +66,10 @@
     <Compile Include="Database\Models\Ticket.cs" />
     <Compile Include="Database\TaxOfficeDb.cs" />
     <Compile Include="Database\Models\User.cs" />
+    <Compile Include="EmployeesPage.cs">
+      <SubType>Form</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +78,7 @@
     </Compile>
     <Compile Include="HistoryPage.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProfilePage.cs">
       <DependentUpon>Form1.cs</DependentUpon>
