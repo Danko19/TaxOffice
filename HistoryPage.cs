@@ -19,10 +19,10 @@ namespace TaxOffice
 
         private void AddHistoryItem(HistoryItem historyItem)
         {
-            historyPage_listBox.Items.Insert(0, historyItem.ToString());
+            historyPage_listBox.Items.Insert(0, historyItem.ToPrettyString());
         }
 
-        private void LogHistory(string action)
+        private void LogHistory(string action, bool add = true)
         {
             var historyItem = new HistoryItem
             {
@@ -33,9 +33,10 @@ namespace TaxOffice
             {
                 UserId = historyItem.UserId,
                 Action = historyItem.Action,
-                Timestamp = historyItem.Timestamp
+                TimestampTicks = historyItem.Timestamp.Ticks
             });
-            AddHistoryItem(historyItem);
+            if (add)
+                AddHistoryItem(historyItem);
         }
     }
 }

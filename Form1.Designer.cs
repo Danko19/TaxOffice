@@ -51,8 +51,8 @@
             this.registrationPage = new System.Windows.Forms.TabPage();
             this.registrationPage_registrationsPanel = new System.Windows.Forms.TableLayoutPanel();
             this.historyPage = new System.Windows.Forms.TabPage();
-            this.employeesPage = new System.Windows.Forms.TabPage();
             this.historyPage_listBox = new System.Windows.Forms.ListBox();
+            this.employeesPage = new System.Windows.Forms.TabPage();
             this.startPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.profilePage.SuspendLayout();
@@ -311,6 +311,18 @@
             this.historyPage.Text = "История";
             this.historyPage.UseVisualStyleBackColor = true;
             // 
+            // historyPage_listBox
+            // 
+            this.historyPage_listBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.historyPage_listBox.FormattingEnabled = true;
+            this.historyPage_listBox.HorizontalScrollbar = true;
+            this.historyPage_listBox.ItemHeight = 18;
+            this.historyPage_listBox.Location = new System.Drawing.Point(10, 10);
+            this.historyPage_listBox.Margin = new System.Windows.Forms.Padding(10);
+            this.historyPage_listBox.Name = "historyPage_listBox";
+            this.historyPage_listBox.Size = new System.Drawing.Size(732, 488);
+            this.historyPage_listBox.TabIndex = 0;
+            // 
             // employeesPage
             // 
             this.employeesPage.Location = new System.Drawing.Point(4, 27);
@@ -319,17 +331,6 @@
             this.employeesPage.TabIndex = 4;
             this.employeesPage.Text = "Сотрудники";
             this.employeesPage.UseVisualStyleBackColor = true;
-            // 
-            // historyPage_listBox
-            // 
-            this.historyPage_listBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.historyPage_listBox.FormattingEnabled = true;
-            this.historyPage_listBox.ItemHeight = 18;
-            this.historyPage_listBox.Location = new System.Drawing.Point(10, 10);
-            this.historyPage_listBox.Margin = new System.Windows.Forms.Padding(10);
-            this.historyPage_listBox.Name = "historyPage_listBox";
-            this.historyPage_listBox.Size = new System.Drawing.Size(732, 488);
-            this.historyPage_listBox.TabIndex = 0;
             // 
             // Form1
             // 

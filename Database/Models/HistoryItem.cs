@@ -20,6 +20,7 @@ namespace TaxOffice.Database.Models
         [MapField("timestamp")]
         public long TimestampTicks { get; set; }
 
+        [MapIgnore]
         public DateTime Timestamp
         {
             get => new DateTime(TimestampTicks); 
@@ -32,10 +33,10 @@ namespace TaxOffice.Database.Models
         [MapField("action")]
         public string Action { get; set; }
 
-        public override string ToString()
+        public string ToPrettyString()
         {
             return
-                $"{Timestamp:dd.MM.yyy HH:mm:ss}\tПользователь {TaxOfficeDb.Select<User>(u => u.Id == UserId).Single().FullName} {Action}";
+                $"{Timestamp:dd.MM.yyy HH:mm:ss} Пользователь {TaxOfficeDb.Select<User>(u => u.Id == UserId).Single().FullName} {Action}";
         }
     }
 

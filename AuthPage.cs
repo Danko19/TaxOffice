@@ -55,7 +55,7 @@ namespace TaxOffice
             startPanel.Enabled = false;
             tabControl1.Enabled = true;
             tabControl1.Visible = true;
-            LogHistory(HistoryActions.Authorize);
+            LogHistory(HistoryActions.Authorize, false);
             await Task.WhenAll(
                 LoadTicketPageAsync(),
                 LoadRegistrationPageAsync(),
@@ -81,8 +81,9 @@ namespace TaxOffice
                 return;
             }
 
-            TaxOfficeDb.Insert(() => new User {FullName = fullName, Password = password});
-            LogHistory(HistoryActions.Register);
+            TaxOfficeDb.Insert(() => new User {FullName = fullName, Password = password, Role = Role.None});
+            user = TaxOfficeDb.Select<User>(u => u.FullName == fullName).Single();
+            LogHistory(HistoryActions.Register, false);
             MessageBox.Show($"Пользователь {fullName} зарегистрирован, дождитесь подтверждения администратора");
         }
     }
