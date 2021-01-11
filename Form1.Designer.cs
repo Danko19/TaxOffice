@@ -49,9 +49,10 @@
             this.ticketsPage_addButtonPanel = new System.Windows.Forms.Panel();
             this.ticketsPage_addButton = new System.Windows.Forms.Button();
             this.registrationPage = new System.Windows.Forms.TabPage();
+            this.registrationPage_registrationsPanel = new System.Windows.Forms.TableLayoutPanel();
             this.historyPage = new System.Windows.Forms.TabPage();
             this.employeesPage = new System.Windows.Forms.TabPage();
-            this.registrationPage_registrationsPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.historyPage_listBox = new System.Windows.Forms.ListBox();
             this.startPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.profilePage.SuspendLayout();
@@ -60,6 +61,7 @@
             this.ticketsPage_ticketsPanel.SuspendLayout();
             this.ticketsPage_addButtonPanel.SuspendLayout();
             this.registrationPage.SuspendLayout();
+            this.historyPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // startPanel
@@ -287,8 +289,21 @@
             this.registrationPage.Text = "Заявки на регистрацию";
             this.registrationPage.UseVisualStyleBackColor = true;
             // 
+            // registrationPage_registrationsPanel
+            // 
+            this.registrationPage_registrationsPanel.AutoSize = true;
+            this.registrationPage_registrationsPanel.ColumnCount = 1;
+            this.registrationPage_registrationsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.registrationPage_registrationsPanel.Location = new System.Drawing.Point(7, 7);
+            this.registrationPage_registrationsPanel.Name = "registrationPage_registrationsPanel";
+            this.registrationPage_registrationsPanel.RowCount = 1;
+            this.registrationPage_registrationsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.registrationPage_registrationsPanel.Size = new System.Drawing.Size(720, 1);
+            this.registrationPage_registrationsPanel.TabIndex = 0;
+            // 
             // historyPage
             // 
+            this.historyPage.Controls.Add(this.historyPage_listBox);
             this.historyPage.Location = new System.Drawing.Point(4, 27);
             this.historyPage.Name = "historyPage";
             this.historyPage.Size = new System.Drawing.Size(752, 506);
@@ -305,17 +320,16 @@
             this.employeesPage.Text = "Сотрудники";
             this.employeesPage.UseVisualStyleBackColor = true;
             // 
-            // registrationPage_registrationsPanel
+            // historyPage_listBox
             // 
-            this.registrationPage_registrationsPanel.AutoSize = true;
-            this.registrationPage_registrationsPanel.ColumnCount = 1;
-            this.registrationPage_registrationsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.registrationPage_registrationsPanel.Location = new System.Drawing.Point(7, 7);
-            this.registrationPage_registrationsPanel.Name = "ticketsPage_ticketsPanel";
-            this.registrationPage_registrationsPanel.RowCount = 1;
-            this.registrationPage_registrationsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.registrationPage_registrationsPanel.Size = new System.Drawing.Size(720, 1);
-            this.registrationPage_registrationsPanel.TabIndex = 0;
+            this.historyPage_listBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.historyPage_listBox.FormattingEnabled = true;
+            this.historyPage_listBox.ItemHeight = 18;
+            this.historyPage_listBox.Location = new System.Drawing.Point(10, 10);
+            this.historyPage_listBox.Margin = new System.Windows.Forms.Padding(10);
+            this.historyPage_listBox.Name = "historyPage_listBox";
+            this.historyPage_listBox.Size = new System.Drawing.Size(732, 488);
+            this.historyPage_listBox.TabIndex = 0;
             // 
             // Form1
             // 
@@ -342,6 +356,8 @@
             this.ticketsPage_ticketsPanel.ResumeLayout(false);
             this.ticketsPage_addButtonPanel.ResumeLayout(false);
             this.registrationPage.ResumeLayout(false);
+            this.registrationPage.PerformLayout();
+            this.historyPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -371,5 +387,6 @@
         private System.Windows.Forms.Panel ticketsPage_addButtonPanel;
         private System.Windows.Forms.Button ticketsPage_addButton;
         private System.Windows.Forms.TableLayoutPanel registrationPage_registrationsPanel;
+        private System.Windows.Forms.ListBox historyPage_listBox;
     }
 }

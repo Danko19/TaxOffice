@@ -171,16 +171,23 @@ namespace TaxOffice
                         Address = ticket.Address,
                         Indebtedness = ticket.Indebtedness
                     });
+                    LogHistory(HistoryActions.TicketCreated(ticket));
                     editButton.Text = "Изменить";
                 }
                 else
+                {
                     TaxOfficeDb.Update<Ticket>(t => t.Id == ticket.Id, t => ticket);
+                    LogHistory(HistoryActions.TicketEdited(ticket));
+                }
             };
 
             deleteButton.Click += (sender, args) =>
             {
                 if (ticket != null)
+                {
                     TaxOfficeDb.Delete<Ticket>(t => t.Id == ticket.Id);
+                    LogHistory(HistoryActions.TicketDeleted(ticket));
+                }
                 var rowIndex = ticketsPage_ticketsPanel.GetRow(panel);
                 ticketsPage_ticketsPanel.RowStyles.RemoveAt(rowIndex);
                 ticketsPage_ticketsPanel.Controls.Remove(panel);

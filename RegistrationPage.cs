@@ -28,6 +28,10 @@ namespace TaxOffice
 
         private Panel CreateRegistrationPanel(User registeredUser)
         {
+            var registerDate =
+                TaxOfficeDb.Select<HistoryItem>(
+                    hi => hi.UserId == registeredUser.Id && hi.Action == "зарегистрировался")
+                    .Single().Timestamp;
             var fullNameLabel = new Label
             {
                 AutoSize = true,
@@ -57,7 +61,7 @@ namespace TaxOffice
                 Location = new Point(420, 3),
                 Size = new Size(290, 26),
                 TabIndex = 2,
-                Text = "26.11.1998",
+                Text = registerDate.ToString("dd.MM.yyy HH:mm:ss"),
                 TextAlign = ContentAlignment.MiddleCenter
             };
             var acceptButton = new Button
@@ -92,11 +96,13 @@ namespace TaxOffice
             acceptButton.Click += (sender, args) =>
             {
                 TaxOfficeDb.Update<User>(u => u.Id == registeredUser.Id, u => new User {Role = Role.Employee});
+                LogHistory(HistoryActions.UserAccepted(registeredUser));
                 DeletePanel();
             };
             declineButton.Click += (sender, args) =>
             {
                 TaxOfficeDb.Delete<User>(u => u.Id == registeredUser.Id);
+                LogHistory(HistoryActions.UserDeclined(registeredUser));
                 DeletePanel();
             };
 

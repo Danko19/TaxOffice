@@ -37,6 +37,7 @@ namespace TaxOffice
         {
             TaxOfficeDb.Update<User>(u => u.Id == user.Id, userOld =>
                 new User {Email = profilePage_emailTextBox.Text});
+            LogHistory(HistoryActions.EmailEdited);
             profilePage_emailChangeButton.Enabled = false;
         }
 
@@ -44,6 +45,7 @@ namespace TaxOffice
         {
             TaxOfficeDb.Update<User>(u => u.Id == user.Id, userOld =>
                 new User {Password = profilePage_passwordTextBox.Text});
+            LogHistory(HistoryActions.PasswordEdited);
             profilePage_passwordChangeButton.Enabled = false;
         }
 
@@ -59,6 +61,7 @@ namespace TaxOffice
                     var newPicture = File.ReadAllBytes(dlg.FileName);
                     TaxOfficeDb.Update<User>(u => u.Id == user.Id, userOld =>
                         new User {PictureRaw = newPicture});
+                    LogHistory(HistoryActions.AvatarEdited);
                     user.PictureRaw = newPicture;
                     profilePage_pictureBox.BackgroundImage = user.Picture;
                 }
